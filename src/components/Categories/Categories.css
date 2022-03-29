@@ -1,0 +1,14 @@
+.watch-now-btn {
+  width: 250px;
+  border-radius: 0;
+  background-color: var(--priamary-color);
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.category-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap: 1rem;
+    justify-content: center;
+}

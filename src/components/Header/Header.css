@@ -1,0 +1,24 @@
+@import url('../../variable/variable.css');
+.primary-color {
+    color: var(--priamary-color);
+  }
+  
+  .login-btn {
+    color: var(--black-color);
+  }
+  .login-btn:hover {
+    background-color: var(--secondary-color);
+  }
+  .primary-bg {
+    background-color: var(--priamary-color);
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  .logo-img {
+    height: 50px;
+    width: 50px;
+  }
+  
