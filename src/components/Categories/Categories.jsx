@@ -4,9 +4,10 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 import "../Categories/Categories.css";
+import { useLoader } from "../../Custom-hook/use-loader";
 
 export const Categories = () => {
-  const [loader, setLoader] = useState(false);
+  const {loader,setLoader}=useLoader()
   const [categories, setCategories] = useState([]);
 
   const getCategories = async () => {
