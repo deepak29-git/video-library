@@ -1,13 +1,24 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Header } from "../../components/Header/Header";
+import { Sidebar } from "../../components/Sidebar/Sidebar";
+import { useAuth } from "../../Context/auth-context";
+import { useWatchLater } from "../../Context/watch-leter-context";
+import { addToWatchLater } from "../../Utility/addToWatchLater";
+import { deleteFromWatchLater } from "../../Utility/deleteFromWatchLater";
+import { Link } from "react-router-dom";
 import "../VideoListing/VideoListing.css";
 function VideoListing() {
   const [videos, setVideos] = useState([]);
+  const { watchLaterState, watchLaterDispatch } = useWatchLater();
+  const { watchedVideo } = watchLaterState;
+  const { auth } = useAuth();
+  const navigate = useNavigate();
+
   const getVideos = async () => {
     try {
       const { data } = await axios.get("/api/videos");
-      console.log(data.videos);
       setVideos(data.videos);
     } catch (error) {
       console.log(error);
@@ -21,23 +32,35 @@ function VideoListing() {
     <>
       <Header />
       <div className="grid-container">
+        <Sidebar />
         {videos.map((video) => {
-          const { _id } = video;
+          const { _id, image, title } = video;
           return (
-            <div>
-              <iframe
-                className="video-frame"
-                width="300"
-                height="1000"
-                src={`https://www.youtube.com/embed/${_id}`}
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-              <button className="btn watch-later-btn primary-bg">
-                Watch Later
-              </button>
+            <div key={_id} className="video-listing-container plr-1">
+              <img className="thumbnail-image" src={image} alt={title} />
+              <div>
+                {watchedVideo.find((video) => video._id === _id) ? (
+                  <button
+                    className="btn watch-later-btn primary-bg"
+                    onClick={() =>
+                      deleteFromWatchLater(_id, watchLaterDispatch)
+                    }
+                  >
+                    Remove From Watchlater
+                  </button>
+                ) : (
+                  <button
+                    onClick={() =>
+                      auth
+                        ? addToWatchLater(video, watchLaterDispatch)
+                        : navigate("/login")
+                    }
+                    className="btn watch-later-btn primary-bg"
+                  >
+                    Watch Later
+                  </button>
+                )}
+              </div>
             </div>
           );
         })}
