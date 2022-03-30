@@ -2,14 +2,13 @@
  * Videos Database can be added here.
  * You can add videos of your wish with different attributes
  * */
-import { v4 as uuid } from "uuid";
 
 export const videos = [
   {
     _id: "V7LwfY5U5WI",
     title: "Shershah",
     image:
-      "https://i.ytimg.com/an_webp/V7LwfY5U5WI/mqdefault_6s.webp?du=3000&sqp=CJS7j5IG&rs=AOn4CLBHjaChtDeP2ww3D9Bs1IczdeGpOg",
+      "https://i.ytimg.com/vi/amWKXh9_EQE/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAwKpBj4I29oH3R8qrJ_BbHPYZCug",
     description:
       "Shershaah Lofi Mashup | Vinick | Shershaah All Songs | Bpraak | Darshan Raval | Mann Bharryaa",
     creator: "Deepak goyal",

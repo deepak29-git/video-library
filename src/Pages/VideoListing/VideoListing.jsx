@@ -4,10 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { Header } from "../../components/Header/Header";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
 import { useAuth } from "../../Context/auth-context";
+import { useLike } from "../../Context/like-context";
 import { useWatchLater } from "../../Context/watch-leter-context";
 import { addToWatchLater } from "../../Utility/addToWatchLater";
 import { deleteFromWatchLater } from "../../Utility/deleteFromWatchLater";
-import { Link } from "react-router-dom";
+import { dislikeHandler } from "../../Utility/dislikeHandler";
+import { likeHandler } from "../../Utility/like-handler";
 import "../VideoListing/VideoListing.css";
 function VideoListing() {
   const [videos, setVideos] = useState([]);
@@ -15,6 +17,8 @@ function VideoListing() {
   const { watchedVideo } = watchLaterState;
   const { auth } = useAuth();
   const navigate = useNavigate();
+const {likeDispatch}=useLike()
+
 
   const getVideos = async () => {
     try {
@@ -39,6 +43,10 @@ function VideoListing() {
             <div key={_id} className="video-listing-container plr-1">
               <img className="thumbnail-image" src={image} alt={title} />
               <div>
+                <div className="space-between">
+                  <span onClick={()=>likeHandler(video,likeDispatch)} className="btn material-icons">thumb_up</span>
+                  <span onClick={()=>dislikeHandler(_id,likeDispatch)} className="btn material-icons">thumb_down</span>
+                </div>
                 {watchedVideo.find((video) => video._id === _id) ? (
                   <button
                     className="btn watch-later-btn primary-bg"
