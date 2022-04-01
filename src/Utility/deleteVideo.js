@@ -9,7 +9,8 @@ export const deleteVideo=async(videoId,playlistId,setVideo)=>{
                 authorization:getToken()
             }
         })
-        setVideo(response.data.playlists)
+        console.log(response.data,"delete")
+        setVideo(response.data.playlist.videos)
     }catch(error){
         console.log(error)
     }
