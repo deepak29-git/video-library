@@ -9,8 +9,7 @@ export const dislikeHandler = async (_id, likeDispatch) => {
       headers: {
         authorization: getToken(),
       },
-    });
-
+    });    
     likeDispatch({ type: "DISLIKE", payload: data.likes });
   } catch (error) {
     console.log(error);

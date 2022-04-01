@@ -1,6 +1,6 @@
 @import url('../../variable/variable.css');
 .primary-color {
-    color: var(--priamary-color);
+    color: var(--primary-color);
   }
   
   .login-btn {
@@ -10,7 +10,7 @@
     background-color: var(--secondary-color);
   }
   .primary-bg {
-    background-color: var(--priamary-color);
+    background-color: var(--primary-color);
   }
   
   .logo-container {

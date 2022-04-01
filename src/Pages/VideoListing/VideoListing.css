@@ -1,14 +1,101 @@
+@import url("../../variable/variable.css");
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   margin-top: 6rem;
 }
 
+.postion-center {
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  left: 50%;
+}
 
+.modal-header {
+  position: relative;
+}
+.playlist-close {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 8px;
+}
+.playlist-close:hover {
+  background-color: var(--accent-color);
+}
+
+.playlist-input {
+  padding: 5px;
+  margin-top: 5px;
+}
 .thumbnail-image {
   width: 300px;
 }
 .watch-later-btn {
   width: 300px;
   border-radius: 0;
+}
+
+.icon-container {
+  display: flex;
+}
+
+.like-dislike-container {
+  margin-left: auto;
+}
+
+body {
+  letter-spacing: 1px;
+  font-family: sans-serif;
+}
+.header_text {
+  padding: 1rem 0 1rem 1.5rem;
+}
+
+.background {
+  background-color: white;
+  width: 240px;
+  border-radius: 5px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.items {
+  overflow-y: scroll;
+  height: 150px;
+  padding: 1rem 0 0 1.5rem;
+}
+.item {
+  padding-bottom: 1.5rem;
+  display: flex;
+  gap: 16px;
+}
+
+.playlist-checkbox{
+  margin-left: 5px;
+}
+label {
+  font-size: 14px;
+
+}
+
+.action1 {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.action1:hover,
+.action2:hover {
+  background-color: rgb(238, 232, 232);
 }
