@@ -4,9 +4,10 @@ import axios from "axios";
 
 import "../../Pages/SelectedCategory/SelectedCategory.css";
 import { useParams } from "react-router-dom";
+import { useLoader } from "../../Custom-hook/use-loader";
 
 export const SelectedCategory = () => {
-  const [loader, setLoader] = useState(false);
+  const {loader, setLoader} = useLoader()
   const [selectedCategories, setSelectedCategory] = useState([]);
   const { _id } = useParams();
   // console.log(_id)

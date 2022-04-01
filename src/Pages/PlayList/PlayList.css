@@ -1,0 +1,21 @@
+@import url('../../variable/variable.css');
+.create-playlist{
+    color:var(--priamary-color);
+    border: 2px solid var(--priamary-color);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+
+
+.box-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 100px;
+    width: 200px;
+    background-color :var(--accent-color);
+    padding: 1rem;
+}

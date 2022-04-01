@@ -13,20 +13,19 @@ export const WatchLater = () => {
   console.log(watchedVideo);
   console.log(watchedVideo, "post");
   useEffect(() => {
-    async () => {
+    (async () => {
       try {
-        const response = await axios({
-          method: "GET",
-          url: "/api/user/watchlater",
-          headers: {
-            authorization: getToken(),
-          },
-        });
+        const response=await axios.get("/api/user/watchlater",{
+          headers:{
+            authorization:getToken()
+          }
+        })
+
         console.log(response, "get");
       } catch (error) {
         console.log(error);
       }
-    };
+    })();
   }, []);
   return (
     <>
