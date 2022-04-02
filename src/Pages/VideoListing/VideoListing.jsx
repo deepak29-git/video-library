@@ -4,19 +4,18 @@ import { useNavigate, Link } from "react-router-dom";
 import { Header } from "../../components/Header/Header";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
 import { useAuth } from "../../Context/auth-context";
-import { useLike } from "../../Context/like-context";
 import { usePlaylist } from "../../Context/platlist-context";
 import { useWatchLater } from "../../Context/watch-leter-context";
 import { useLoader } from "../../Custom-hook/use-loader";
 import { addToWatchLater } from "../../Utility/addToWatchLater";
 import { deleteFromWatchLater } from "../../Utility/deleteFromWatchLater";
-import { dislikeHandler } from "../../Utility/dislikeHandler";
-import { likeHandler } from "../../Utility/like-handler";
 import "../VideoListing/VideoListing.css";
 import { getVideos } from "../../Data/getvideos";
 import { useData } from "../../Context/data-context";
 import { Modal } from "../../components/Modal/Modal";
 import { addToPlaylist } from "../../Utility/add-to-playlist";
+import { addToHistory } from "../../Utility/add-to-history";
+import { useHistory } from "../../Context/history-context";
 function VideoListing() {
   const { data, setData } = useData();
   const { loader, setLoader } = useLoader();
@@ -26,7 +25,7 @@ function VideoListing() {
   const { bg, modal } = playlistState;
   const { auth } = useAuth();
   const navigate = useNavigate();
-  const { likeDispatch } = useLike();
+  const {setHistory}=useHistory()
 
   useEffect(() => {
     getVideos(setLoader, setData);
@@ -39,11 +38,13 @@ function VideoListing() {
         <Sidebar />
         <div className="postion-center">{modal && <Modal />}</div>
         {loader && <h1 className="center">...Loading</h1>}
+        <div className="video-listing-main">
+
         {data.map((video) => {
           const { _id, image, title } = video;
           return (
-            <div key={_id} className="video-listing-container plr-1">
-              <Link to={`/watch/${_id}`}>
+            <div key={_id} className="video-card">
+              <Link to={`/watch/${_id}`} onClick={()=>addToHistory(video,setHistory)}>
                 <img className="thumbnail-image btn" src={image} alt={title} />
               </Link>
               <div>
@@ -62,7 +63,7 @@ function VideoListing() {
                     onClick={() =>
                       deleteFromWatchLater(_id, watchLaterDispatch)
                     }
-                  >
+                    >
                     Remove From Watchlater
                   </button>
                 ) : (
@@ -73,7 +74,7 @@ function VideoListing() {
                         : navigate("/login")
                     }
                     className="btn watch-later-btn primary-bg"
-                  >
+                    >
                     Watch Later
                   </button>
                 )}
@@ -81,6 +82,7 @@ function VideoListing() {
             </div>
           );
         })}
+        </div>
       </div>
     </div>
   );

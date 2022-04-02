@@ -1,16 +1,16 @@
 .video-library-sidebar {
-  display: grid;
-  justify-content: center; 
+  box-shadow: 0px 0px 5px var(--grey-color);
+  margin-top: 4.8rem;
   padding-top: 1rem;
-  border-right: 2px solid var(--grey-color);
-  height: 100vh;
-  grid-column: 1 / 2;
+  z-index: 10;
+  background-color: white;
+  overflow-y: scroll;
+  height: 90vh;
+  display: grid;
+  
   width: 300px;
-  margin-bottom: 5rem;
-
+  justify-content: center;
 }
-
-
 
 .sidebar-link {
   margin-bottom: 2.7rem;
