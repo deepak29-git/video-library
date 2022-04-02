@@ -2,9 +2,12 @@
   display: grid;
   justify-content: center;
   padding-top: 1rem;
-  border-right: 2px solid var(--grey-color);
-  height: 100vh;
-  grid-column: 1 / 2;
+  z-index: 10;
+  background-color: white;
+  overflow-y: scroll;
+  height: 90vh;
+  display: grid;
+  
   width: 300px;
   margin-bottom: 5rem;
 }

@@ -1,9 +1,11 @@
 import "../Sidebar/Sidebar.css";
 import { Link } from "react-router-dom";
+import { useData } from "../../Context/data-context";
 export const Sidebar = () => {
+  const {sidebar}=useData()
   return (
     <div>
-      <aside style={{margin:"0"}} className="video-library-sidebar">
+      <aside style={{position:"fixed",left:sidebar,transition:"all 0.5s ease-in-out"}}  className="video-library-sidebar">
         <ul className="sidebar-lists">
           <Link to="/">
             <li className="sidebar-link">Home</li>
@@ -23,7 +25,7 @@ export const Sidebar = () => {
           <Link to="/playlist">
             <li className="sidebar-link">PlayList</li>
           </Link>
-          <Link to="history">
+          <Link to="/history">
             <li className="sidebar-link">History</li>
           </Link>
         </ul>
