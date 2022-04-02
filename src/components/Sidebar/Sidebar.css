@@ -1,16 +1,13 @@
 .video-library-sidebar {
   display: grid;
-  justify-content: center; 
+  justify-content: center;
   padding-top: 1rem;
   border-right: 2px solid var(--grey-color);
   height: 100vh;
   grid-column: 1 / 2;
   width: 300px;
   margin-bottom: 5rem;
-
 }
-
-
 
 .sidebar-link {
   margin-bottom: 2.7rem;
