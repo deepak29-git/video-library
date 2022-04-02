@@ -1,0 +1,19 @@
+.grid-container {
+  grid-gap: 15px;
+}
+
+.video-container {
+  height: 350px;
+}
+
+.video-title {
+  padding-left: 10px;
+}
+
+
+.clear-all-history{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 6rem;
+    margin-right: 5px;
+}
