@@ -6,7 +6,7 @@
 export const videos = [
   {
     _id: "V7LwfY5U5WI",
-    title: "Shershah",
+    title: "Ranjha – Official Video | Shershaah | Sidharth–Kiara | B Praak | Jasleen Royal | Romy | Anvita Dutt",
     image:
       "https://i.ytimg.com/vi/amWKXh9_EQE/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAwKpBj4I29oH3R8qrJ_BbHPYZCug",
     description:
@@ -27,9 +27,9 @@ export const videos = [
       "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
   },
   {
-    _id: "9kqWIuAlFAI",
+    _id: "nynVielA6ZU",
     title:
-      "Dil sambhal ja jara & Iss dard e dil ki by Arunita & Mohammad Irfan at Grand Finale",
+      "Kun Faya Kun - A.R. Rahman Mohit Chauhan. WORMONO x Drifting Lights Lofi Remake |Bollywood Lofi",
     creator: "Sentdex",
     image:
       "https://i.ytimg.com/vi/nynVielA6ZU/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCZig6uIjtvn7MDPv2RYZzvZYQMYg",

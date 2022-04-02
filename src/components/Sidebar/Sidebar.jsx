@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export const Sidebar = () => {
   return (
     <div>
-      <aside className="video-library-sidebar">
+      <aside style={{margin:"0"}} className="video-library-sidebar">
         <ul className="sidebar-lists">
           <Link to="/">
             <li className="sidebar-link">Home</li>

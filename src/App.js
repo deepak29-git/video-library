@@ -9,6 +9,7 @@ import { WatchLater } from "./Pages/WatchLater/WatchLater";
 import { LikedVideos } from "./Pages/LikedVideos/LikedVideos";
 import { PlayList } from "./Pages/PlayList/PlayList";
 import { PlaylistDetails } from "./Pages/PlaylistDetails/PlaylistDetails";
+import { SingleVideoPage } from "./Pages/SingleVideoPage/SingleVideoPage";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Home/>}/>
+        <Route path="/watch/:_id" element={<SingleVideoPage/>}/>
         <Route path="/mock" element={<Mockman/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/likedvideos" element={<LikedVideos/>}/>
