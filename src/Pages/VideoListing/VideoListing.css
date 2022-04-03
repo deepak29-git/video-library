@@ -1,14 +1,15 @@
 @import url("../../variable/variable.css");
 .grid-container {
   display: grid;
+ 
 }
 
 .video-listing-main {
   grid-column: 1 / 5;
   display: grid;
+  gap: 1rem;
+  margin: 0 1rem;
   margin-top: 5rem;
-  padding: 0 2rem;
-  grid-gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 .postion-center {
@@ -105,26 +106,3 @@ label {
 .action2:hover {
   background-color: rgb(238, 232, 232);
 }
-/* 
-@media only screen and (max-width: 1288px) {
-  .video-listing-main {
-    grid-column: 4 / 6;
-  }
-}
-
-@media only screen and (max-width: 1030px) {
-  .video-listing-main {
-    grid-column: 5 / 6;
-  }
-}
-@media only screen and (max-width: 800px) {
-  .video-listing-main {
-    margin-top: 8rem;
-  }
-}
-
-@media only screen and (max-width: 490px) {
-  .video-listing-main {
-    margin-top: 12rem;
-  }
-} */

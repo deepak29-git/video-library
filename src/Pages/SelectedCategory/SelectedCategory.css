@@ -1,0 +1,24 @@
+.font-size {
+  font-size: 1rem;
+}
+
+.video-card {
+  box-shadow: 0px 0px 5px var(--grey-color);
+}
+
+.video-card:hover {
+  box-shadow: 0px 0px 15px var(--black-color);
+}
+
+.playlist-btn{
+    background-color: var(--grey-shade-1);
+    border-radius: 0;
+    margin-bottom: 5px;
+}
+.watch-later-btn:hover{
+    background-color: var(--secondary-color);
+}
+
+.playlist-btn:hover{
+    background-color: var(--grey-shade-2);
+}

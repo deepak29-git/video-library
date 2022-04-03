@@ -45,7 +45,7 @@ function VideoListing() {
           return (
             <div key={_id} className="video-card">
               <Link to={`/watch/${_id}`} onClick={()=>addToHistory(video,setHistory)}>
-                <img className="thumbnail-image btn" src={image} alt={title} />
+                <img className="thumbnail-image" src={image} alt={title} />
               </Link>
               <div>
                 <div className="icon-container">
