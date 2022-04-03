@@ -11,6 +11,7 @@ import { PlayList } from "./Pages/PlayList/PlayList";
 import { PlaylistDetails } from "./Pages/PlaylistDetails/PlaylistDetails";
 import { SingleVideoPage } from "./Pages/SingleVideoPage/SingleVideoPage";
 import { History } from "./Pages/History/History";
+import { Signup } from "./Pages/Signup/Signup";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/playlist/:_id" element={<PlaylistDetails/>}/>
         <Route path="/category/:categoryName" element={<SelectedCategory/>}/>
         <Route path="/videos" element={<VideoListing/>}/>
+        <Route path="/signup" element={<Signup/>}/>
       </Routes>
         
     </div>
