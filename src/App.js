@@ -26,7 +26,7 @@ function App() {
         <Route path="/playlist" element={<PlayList/>}/>
         <Route path="/history" element={<History/>}/>
         <Route path="/playlist/:_id" element={<PlaylistDetails/>}/>
-        <Route path="/category/:_id" element={<SelectedCategory/>}/>
+        <Route path="/category/:categoryName" element={<SelectedCategory/>}/>
         <Route path="/videos" element={<VideoListing/>}/>
       </Routes>
         

@@ -7,7 +7,7 @@ import "../Categories/Categories.css";
 import { useLoader } from "../../Custom-hook/use-loader";
 
 export const Categories = () => {
-  const {loader,setLoader}=useLoader()
+  const { loader, setLoader } = useLoader();
   const [categories, setCategories] = useState([]);
 
   const getCategories = async () => {
@@ -25,24 +25,22 @@ export const Categories = () => {
       {loader && <h1 style={{ textAlign: "center" }}>Loading...</h1>}
       <div className="plr-1 category-container">
         {categories.map((category) => {
-          const { _id, categoryName, description, categoryImage } = category;
+          const { _id, categoryName, categoryImage } = category;
 
           return (
             <div key={_id} className="card shadow ">
-              <img
-                className="card-img"
-                src={categoryImage}
-                alt={categoryName}
-              />
-              <div>
-                <div className="card-body">
-                  <h3 className="card-title ">{categoryName}</h3>
-                  <small className="card-subtitle">{description}</small>
+              <Link to={`/category/${categoryName}`}>
+                <img
+                  className="card-img"
+                  src={categoryImage}
+                  alt={categoryName}
+                />
+                <div>
+                  <div className="card-body">
+                    <h3 className="card-title center-text ">{categoryName}</h3>
+                  </div>
                 </div>
-                <Link to={`/category/${_id}`}>
-                  <button className="btn watch-now-btn mt-1">Watch Now</button>
-                </Link>
-              </div>
+              </Link>
             </div>
           );
         })}
