@@ -50,8 +50,8 @@ export const Login = () => {
   const testLogin=async()=>{
     try{
       const {data}=await axios.post("api/auth/login",{
-        email:"deepak123@gmail.com",
-        password:"deepak123"
+        email:"adarshbalika@gmail.com",
+        password:"adarshBalika123"
       })
       localStorage.setItem("token",data.encodedToken)
       setAuth(true)
