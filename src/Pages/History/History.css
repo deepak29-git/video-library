@@ -1,19 +1,22 @@
-.grid-container {
-  grid-gap: 15px;
+.history-heading {
+  display: flex;
+  align-items: center;
+  height: 14rem;
+  justify-content: center;
 }
 
-.video-container {
-  height: 350px;
+.clear-history-btn {
+  position: fixed;
+  right: 20px;
+  z-index: 1;
+  top:15%;
 }
 
-.video-title {
-  padding-left: 10px;
+.center-align{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-
-.clear-all-history{
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 6rem;
-    margin-right: 5px;
-}
+ 

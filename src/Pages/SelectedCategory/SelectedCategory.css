@@ -11,7 +11,7 @@
 }
 
 .playlist-btn{
-    background-color: var(--grey-shade-1);
+    background-color: var(--light-grey);
     border-radius: 0;
     margin-bottom: 5px;
 }
@@ -20,5 +20,5 @@
 }
 
 .playlist-btn:hover{
-    background-color: var(--grey-shade-2);
+    background-color: var(--grey-shade-1);
 }

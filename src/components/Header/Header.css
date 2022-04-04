@@ -2,7 +2,7 @@
 .primary-color {
     color: var(--primary-color);
   }
-  
+
   .login-btn {
     color: var(--black-color);
   }
@@ -22,3 +22,8 @@
     width: 50px;
   }
   
+  .hamburger{
+    cursor: pointer;
+    margin-left: 1rem;
+    margin-top: 0.9rem;
+  }

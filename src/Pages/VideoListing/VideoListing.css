@@ -10,13 +10,13 @@
   gap: 1rem;
   margin: 0 1rem;
   margin-top: 5rem;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 }
 .postion-center {
   position: absolute;
   top: 0;
   z-index: 3;
-  left: 50%;
+  left: 41%;
 }
 
 
@@ -40,10 +40,10 @@
   margin-top: 5px;
 }
 .thumbnail-image {
-  width: 300px;
+  width:20.5rem;
 }
 .watch-later-btn {
-  width: 300px;
+  width:20.5rem;
   border-radius: 0;
 }
 
@@ -105,4 +105,11 @@ label {
 .action1:hover,
 .action2:hover {
   background-color: rgb(238, 232, 232);
+}
+
+@media only screen and (max-width:357px){
+  .video-listing-main {
+    margin-top: 8rem;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
 }

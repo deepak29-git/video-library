@@ -1,21 +1,17 @@
 .react-player iframe{
-  height: 500px;
+  height: 28rem;
   width: 100%;
-  margin-top:4rem;
-  margin-left: 1.5rem;
-}
-
-.player-wrapper{
-  margin-top: 2rem;
+  margin-top:5rem;
+  margin-left: 1rem;
 }
 
 .video-description{
-  margin-left: 1.5rem;
-  margin-top:14rem;
+  margin-left: 1rem;
+  margin-top:11.5rem;
   width: 50rem;
 }
 .single-page-icon{
-  gap: 20px;
+  gap: 10px;
 }
 .align-text{
   height: 50px;
@@ -23,4 +19,33 @@
   align-items: center;
   gap: 5px;
   justify-content: center;
+}
+
+.font-size{
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+
+.icon-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+.single-page-playlist-btn{
+  background:transparent;
+  border:none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width:350px){
+  .like-dislike-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .react-player iframe{
+   
+    margin-top:8rem;
+    /* margin-left: 1.5rem; */
+  }
 }

@@ -15,7 +15,7 @@ export const addedToPlaylist = async (  video,_id) => {
         },
       }
     );
-    console.log(response);
+    console.log(response.data);
   } catch (error) {
     console.log(error);
   }

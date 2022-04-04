@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
+import '../../Pages/SelectedCategory/SelectedCategory.css'
 import "../Categories/Categories.css";
 import { useLoader } from "../../Custom-hook/use-loader";
 
@@ -28,7 +28,7 @@ export const Categories = () => {
           const { _id, categoryName, categoryImage } = category;
 
           return (
-            <div key={_id} className="card shadow ">
+            <div key={_id} className="card shadow scale">
               <Link to={`/category/${categoryName}`}>
                 <img
                   className="card-img"

@@ -14,23 +14,22 @@ export const Login = () => {
     email: "",
     password: "",
   });
-  const [errorMsg, setErrorMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState(false);
   const [color, setColor] = useState("");
   const [showPassword, setShowPassword] = useState("password");
   const [icon, setIcon] = useState("visibility_off");
   const handlerInput = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
+    setErrorMsg(false)
   };
 
   const handleUserLogin = async () => {
-    console.log("before if", user.email, user.password);
     if (!user.email && !user.password) {
-      setErrorMsg("Please enter valid Email ID & Password");
+      setErrorMsg(true);
       setColor("red");
       return;
     }
-    console.log(user)
     try {
       setLoader(true);
       const { data } = await axios.post("api/auth/login", {
@@ -43,9 +42,25 @@ export const Login = () => {
       setAuth(true);
       navigate("/");
     } catch (error) {
-      console.log(error);
+      alert(error);
+      alert("Enter Correct Details")
     }
   };
+
+  const testLogin=async()=>{
+    try{
+      const {data}=await axios.post("api/auth/login",{
+        email:"deepak123@gmail.com",
+        password:"deepak123"
+      })
+      localStorage.setItem("token",data.encodedToken)
+      setAuth(true)
+      navigate("/")
+    }catch(error){
+      alert(error)
+    }
+    
+  }
 
   const passwordHandler = () => {
     if (showPassword === "password") {
@@ -74,7 +89,7 @@ export const Login = () => {
               placeholder="Enter Email"
             />
           </div>
-          <small style={{ color: color }}>{errorMsg}</small>
+          <small style={{ color: color }}>{errorMsg&& "Please Enter your email"}</small>
           <div className="input-group">
             <label className="form-label">Password </label>
             <span
@@ -92,23 +107,24 @@ export const Login = () => {
               placeholder="Enter Password"
             />
           </div>
-          <small style={{ color: color }}>{errorMsg}</small>
+          <small style={{ color: color }}>{errorMsg&&"Enter your Password"}</small>
           <div className="checkbox-parent">
-            <input type="checkbox" />
-            <label>Remember me</label>
             <div className="forgot-pass">
               <a href="#" className="forget-content">
                 <span className="forgot-pass">Forgot your Password?</span>
               </a>
             </div>
           </div>
+            <div className="center">
 
+            <button onClick={()=>testLogin()} style={{ width: "100%" }} className="btn primary-bg mt-1">Test Login</button>
+            </div>
           <div className="center">
             <button
               type="submit"
               style={{ width: "100%" }}
               onClick={handleUserLogin}
-              className="my-2 btn primary-bg"
+              className="mt-1 mb-1 btn primary-bg"
             >
               {loader ? "Loading...." : "Login"}
             </button>

@@ -20,13 +20,14 @@ import { useWatchLater } from "../../Context/watch-leter-context";
 import { useAuth } from "../../Context/auth-context";
 export const SingleVideoPage = () => {
   const { data, setData } = useData();
-  
+  const [dislikeToggle, setDislikeToggle] = useState(false);
   const { playlistState, playlistDispatch } = usePlaylist();
   const { watchLaterState, watchLaterDispatch } = useWatchLater();
   const { watchedVideo } = watchLaterState;
   const { setLoader } = useLoader();
   const [find, setFind] = useState([]);
-  const { likeDispatch } = useLike();
+  const { likeState, likeDispatch } = useLike();
+  const { likedVideo } = likeState;
   const { _id } = useParams();
   const { bg, modal } = playlistState;
   const { auth } = useAuth();
@@ -38,6 +39,9 @@ export const SingleVideoPage = () => {
     getVideos(setLoader, setData);
   }, []);
 
+  const dislikeBtnHandler = () => {
+    dislikeToggle ? setDislikeToggle(false) : setDislikeToggle(!dislikeToggle);
+  };
   return (
     <>
       <Header />
@@ -50,40 +54,64 @@ export const SingleVideoPage = () => {
         />
       </div>
       <div className="video-description">
-        <h2>{find.title}</h2>
+        <h3>{find.title}</h3>
         <div className="icon-container">
           <div className="like-dislike-container">
-            <span
-              onClick={() => likeHandler(find, likeDispatch)}
-              className=" material-icons  btn"
-            >
-              thumb_up
-            </span>
-            <span
-              onClick={() => dislikeHandler(find._id, likeDispatch)}
-              className=" material-icons btn"
-            >
-              thumb_down
-            </span>
+            {likedVideo.some((video) => video._id === _id) ? (
+              <span
+                onClick={() => dislikeHandler(_id, likeDispatch)}
+                className=" material-icons btn"
+              >
+                thumb_up
+              </span>
+            ) : (
+              <span
+                onClick={() =>
+                  auth ? likeHandler(find, likeDispatch) : navigate("/login")
+                }
+                className=" material-icons-outlined  btn"
+              >
+                thumb_up
+              </span>
+            )}
+
+            {dislikeToggle ? (
+              <span
+                onClick={() => dislikeBtnHandler()}
+                className=" material-icons btn"
+              >
+                thumb_down
+              </span>
+            ) : (
+              <span
+                onClick={() => dislikeBtnHandler()}
+                className=" material-icons-outlined btn"
+              >
+                thumb_down
+              </span>
+            )}
           </div>
           <div className="postion-center">{modal && <Modal />}</div>
           <div className="icon-container single-page-icon">
             <span
               onClick={() => addToPlaylist(find, playlistDispatch)}
-              className="material-icons btn playlist-btn align-text"
+              className="material-icons-outlined btn align-text"
             >
-              playlist_add 
-              <span style={{ fontSize: "15px" }}>save</span>
+              playlist_add
+              <span className="font-size">SAVE</span>
             </span>
 
             {watchedVideo.find((video) => video._id === _id) ? (
               <button
-             
+                className="single-page-playlist-btn"
                 onClick={() =>
                   deleteFromWatchLater(find._id, watchLaterDispatch)
                 }
               >
-                Remove From Watchlater
+                <span className="material-icons align-text">
+                  watch_later
+                  <span className="font-size">WATCH LATER</span>
+                </span>
               </button>
             ) : (
               <button
@@ -92,11 +120,11 @@ export const SingleVideoPage = () => {
                     ? addToWatchLater(find, watchLaterDispatch)
                     : navigate("/login")
                 }
-                style={{background:"transparent",border:"none"}}
+                className="single-page-playlist-btn"
               >
-                <span className="material-icons align-text">watch_later
-                
-                <span style={{ fontSize: "15px"}}>Watch Later</span>
+                <span className="material-icons-outlined align-text">
+                  watch_later
+                  <span className="font-size">WATCH LATER</span>
                 </span>
               </button>
             )}

@@ -12,6 +12,7 @@ export const Modal=()=>{
         playlistDispatch,
       } = usePlaylist();
       const { createPlaylist,selectedPlaylist } = playlistState;
+    
     const closeHandler = () => {
         playlistDispatch({type:"MODAL",payload:false})
       playlistDispatch({type:"BG",payload:"white"})
@@ -53,6 +54,8 @@ export const Modal=()=>{
                             
                           >
                             {list.title}
+                          
+                
                           </span>
                           <br />
                         </label>

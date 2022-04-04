@@ -1,8 +1,10 @@
 import {Link} from 'react-router-dom'
+import '../Banner/Banner.css'
 export const Banner = () => {
   return (
-    <div>
+    <div className='banner-container'>
       <img
+        className='banner-img'
         src="https://www.transess.com/wp-content/uploads/video-and-animation-banner.jpg"
         alt="baner"
       />

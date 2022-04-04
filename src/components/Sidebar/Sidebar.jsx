@@ -1,33 +1,44 @@
 import "../Sidebar/Sidebar.css";
-import { Link } from "react-router-dom";
+import {NavLink, Link } from "react-router-dom";
 import { useData } from "../../Context/data-context";
 export const Sidebar = () => {
-  const {sidebar}=useData()
+  const { sidebar } = useData();
+
+
+  const activeStyle=(({isActive})=>{
+    return isActive?"activeTab":undefined
+  })
+  
   return (
     <div>
-      <aside style={{position:"fixed",left:sidebar,transition:"all 0.5s ease-in-out"}}  className="video-library-sidebar">
+      <aside
+        style={{
+          left: sidebar,
+        }}
+        className="video-library-sidebar"
+      >
         <ul className="sidebar-lists">
-          <Link to="/">
-            <li className="sidebar-link">Home</li>
-          </Link>
-          <Link to="/videos">
+          <div>
+          <NavLink className={activeStyle}  to="/">
+            <li   className="sidebar-link">Home</li>
+          </NavLink>
+          </div>
+          <NavLink className={activeStyle} to="/videos">
             <li className="sidebar-link">All Videos</li>
-          </Link>
-          <Link to="trendingvideos">
-            <li className="sidebar-link">Trending Videos</li>
-          </Link>
-          <Link to="/watchlater">
+          </NavLink >
+
+          <NavLink className={activeStyle} to="/watchlater">
             <li className="sidebar-link">Watch Later</li>
-          </Link>
-          <Link to="/likedvideos">
+          </NavLink >
+          <NavLink className={activeStyle} to="/likedvideos">
             <li className="sidebar-link">Liked Videos</li>
-          </Link>
-          <Link to="/playlist">
+          </NavLink >
+          <NavLink className={activeStyle} to="/playlist">
             <li className="sidebar-link">PlayList</li>
-          </Link>
-          <Link to="/history">
+          </NavLink >
+          <NavLink className={activeStyle} to="/history">
             <li className="sidebar-link">History</li>
-          </Link>
+          </NavLink >
         </ul>
       </aside>
     </div>

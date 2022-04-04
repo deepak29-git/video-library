@@ -24,14 +24,14 @@ export const Header = () => {
   };
   return (
     <div>
-      {sidebar && <Sidebar />}
+       <Sidebar />
       <header className="header">
         <nav className="navbar">
           <div className="logo-container">
             <span
               onClick={menuHandler}
-              style={{ cursor: "pointer" }}
-              class="material-icons"
+              
+              className="material-icons hamburger "
             >
               menu
             </span>

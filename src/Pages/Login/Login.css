@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 100vh;
 }
 
 .login-container {
@@ -16,9 +16,6 @@
   justify-content: center;
 }
 
-.input-group {
-  width: 380px;
-}
 
 .right-arrow {
   height: 20px;
@@ -40,11 +37,13 @@ a {
 }
 
 .forget-content {
-  color: var(--primary-color);
+  color: var(--black-color);
 }
 
 .input-group {
   position: relative;
+  width: 380px;
+  
 }
 .visibility {
   position: absolute;

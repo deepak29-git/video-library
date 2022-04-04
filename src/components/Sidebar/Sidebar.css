@@ -1,20 +1,29 @@
 .video-library-sidebar {
   display: grid;
   justify-content: center;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   z-index: 10;
-  margin-top: 5rem;
+  margin-top: 4.9rem;
   background-color: white;
   overflow-y: scroll;
   height: 90vh;
-  display: grid;
-  
   width: 300px;
   margin-bottom: 5rem;
+  position: fixed;
+  transition: all 0.5s ease-in-out;
 }
 
+.activeTab .sidebar-link{
+background-color: var(--grey-shade-1);
+}
 .sidebar-link {
-  margin-bottom: 2.7rem;
   cursor: pointer;
+  
   list-style: none;
+  padding: 0.5rem 5rem;
+  line-height: 2.5rem;
+}
+
+.sidebar-link:hover {
+    background-color: var(--grey-shade-2);
 }

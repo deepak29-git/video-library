@@ -7,7 +7,7 @@ const PlaylistContext = createContext(null);
 const PlaylistProvider = ({ children }) => {
   const [getPlaylist, setGetPlaylist] = useState([]);
   const [getVideos, setGetVideos] = useState([]);
-
+  const [checked,setChecked]=useState(false)
   const [playlistState, playlistDispatch] = useReducer(playlistReducer, {
     playlistVideos: [],
     createPlaylist: [],
@@ -24,6 +24,7 @@ const PlaylistProvider = ({ children }) => {
         setGetPlaylist,
         getVideos,
         setGetVideos,
+        checked,setChecked
       }}
     >
       {children}
