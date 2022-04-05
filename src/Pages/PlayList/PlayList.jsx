@@ -32,7 +32,6 @@ export const PlayList = () => {
     })();
   }, []);
 
-  
 
   return (
     <>

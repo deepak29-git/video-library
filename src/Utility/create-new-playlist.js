@@ -1,9 +1,11 @@
 import axios from "axios";
 import { getToken } from "./get-token";
-// import { videoObj } from "./video-obj";
 
-export const createNewPlaylistHandler = async (playlist,playlistDispatch,setPlaylist) => {
-  
+export const createNewPlaylistHandler = async (
+  playlist,
+  playlistDispatch,
+  setPlaylist
+) => {
   try {
     const response = await axios.post(
       `/api/user/playlists/`,
@@ -17,10 +19,13 @@ export const createNewPlaylistHandler = async (playlist,playlistDispatch,setPlay
         },
       }
     );
- 
-    playlistDispatch({type:"CREATE_PLAYLIST",payload:response.data.playlists})
-    setPlaylist({...playlist,title:""});
+
+    playlistDispatch({
+      type: "CREATE_PLAYLIST",
+      payload: response.data.playlists,
+    });
+    setPlaylist({ ...playlist, title: "" });
   } catch (error) {
-    console.log(error);
+    alert(error);
   }
 };

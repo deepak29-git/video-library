@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../PlaylistDetails/PlaylistDetails.css";
 import { deleteVideo } from "../../Utility/deleteVideo";
 import { Header } from "../../components/Header/Header";
@@ -8,8 +8,8 @@ import { usePlaylist } from "../../Context/platlist-context";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "../../components/Modal/Modal";
 export const PlaylistDetails = () => {
-  const { getPlaylist,playlistState } = usePlaylist();
-  const [playlistVideo, setPlaylistVideo] = useState([]);
+  const { getPlaylist, playlistState, playlistVideo, setPlaylistVideo } =
+    usePlaylist();
   const { _id } = useParams();
   const { bg, modal } = playlistState;
   const navigate = useNavigate();
@@ -46,7 +46,14 @@ export const PlaylistDetails = () => {
               {playlistVideo.map((video) => (
                 <div className="videocard">
                   <VideoCard key={video._id} video={video} />
-                <span onClick={()=>deleteVideo(video._id,_id,setPlaylistVideo)} className="material-icons delete-btn">delete</span>
+                  <span
+                    onClick={() =>
+                      deleteVideo(video._id, _id, setPlaylistVideo)
+                    }
+                    className="material-icons delete-btn"
+                  >
+                    delete
+                  </span>
                 </div>
               ))}
             </div>
@@ -54,29 +61,5 @@ export const PlaylistDetails = () => {
         </div>
       </div>
     </>
-
-    // <div>
-    //   {video &&
-    //     video.map((item) => (
-    //       <div key={_id} className="video-container">
-    //         <img
-    //           className="thumbnail-image"
-    //           src={item.image}
-    //           alt={item.title}
-    //         />
-    //         <div className="space-between">
-    //           <h2 className="video-title">{item.title}</h2>
-    //           <span
-    //             onClick={() => deleteVideo(item._id, _id, setVideo)}
-    //             className="material-icons btn"
-    //           >
-    //             delete
-    //           </span>
-    //         </div>
-    //       </div>
-    //     ))}
-    // </div>
   );
 };
-
-
