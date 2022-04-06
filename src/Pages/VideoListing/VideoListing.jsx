@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Header } from "../../components/Header/Header";
 import { usePlaylist } from "../../Context/platlist-context";
 import { useLoader } from "../../Custom-hook/use-loader";
@@ -10,7 +10,7 @@ import { VideoCard } from "../../components/VideoCard/VideoCard";
 function VideoListing() {
   const { data, setData } = useData();
   const { loader, setLoader } = useLoader();
-  
+
   const { playlistState } = usePlaylist();
   const { bg, modal } = playlistState;
 
@@ -23,9 +23,15 @@ function VideoListing() {
       <Header />
       <div className="grid-container">
         <div className="postion-center">{modal && <Modal />}</div>
-        {loader && <h1 className="center">...Loading</h1>}
-        <div className="video-listing-main">
-          {data.map((video) =><VideoCard key={video._id} video={video} />)}
+     
+        <div className={!loader&&`video-listing-main`}>
+        {loader && 
+          <div className="center-xy">
+            <img src="https://www.uttf.com.ua/assets/images/loader2.gif" alt="loader" />
+            </div>}
+          {data.map((video) => (
+            <VideoCard key={video._id} video={video} />
+            ))}
         </div>
       </div>
     </div>

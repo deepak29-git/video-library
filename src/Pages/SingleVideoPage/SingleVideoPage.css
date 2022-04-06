@@ -5,6 +5,10 @@
   margin-left: 1rem;
 }
 
+.single-page-container{
+  display: flex;
+}
+
 .video-description{
   margin-left: 1rem;
   margin-top:11.5rem;

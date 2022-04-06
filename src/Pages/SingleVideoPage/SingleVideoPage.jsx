@@ -24,7 +24,7 @@ export const SingleVideoPage = () => {
   const { playlistState, playlistDispatch } = usePlaylist();
   const { watchLaterState, watchLaterDispatch } = useWatchLater();
   const { watchedVideo } = watchLaterState;
-  const { setLoader } = useLoader();
+  const {loader, setLoader } = useLoader();
   const [find, setFind] = useState([]);
   const { likeState, likeDispatch } = useLike();
   const { likedVideo } = likeState;
@@ -39,18 +39,22 @@ export const SingleVideoPage = () => {
     getVideos(setLoader, setData);
   }, []);
 
-  const dislikeBtnHandler = () => {
-    setDislikeToggle(true);
-  };
+
   return (
     <>
       <Header />
+      {loader && 
+          <div className="center-xy">
+            <img src="https://www.uttf.com.ua/assets/images/loader2.gif" alt="loader" />
+            </div>}
       <div className="player-wrapper" style={{ backgroundColor: bg }}>
         <ReactPlayer
           className="react-player"
           url={`https://www.youtube.com/watch?v=${_id}`}
           width="900px"
           playing={true}
+          controls={true}
+        
         />
       </div>
       <div className="video-description">

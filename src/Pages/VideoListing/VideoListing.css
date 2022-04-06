@@ -19,6 +19,12 @@
   left: 41%;
 }
 
+.center-xy{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
 .modal-header {
   position: relative;

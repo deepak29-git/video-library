@@ -22,7 +22,14 @@ export const Categories = () => {
 
   return (
     <>
-      {loader && <h1 style={{ textAlign: "center" }}>Loading...</h1>}
+      {loader && (
+        <div className="center-xy">
+          <img
+            src="https://www.uttf.com.ua/assets/images/loader2.gif"
+            alt="loader"
+          />
+        </div>
+      )}
       <div className="plr-1 category-container">
         {categories.map((category) => {
           const { _id, categoryName, categoryImage } = category;
