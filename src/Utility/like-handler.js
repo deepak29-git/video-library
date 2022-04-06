@@ -15,6 +15,7 @@ export const likeHandler = async (video, likeDispatch) => {
       }
     );
     likeDispatch({type:"LIKE",payload:data.likes})
+    
   } catch (error) {
     console.log(error);
   }

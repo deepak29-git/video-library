@@ -10,6 +10,7 @@ import { VideoCard } from "../../components/VideoCard/VideoCard";
 function VideoListing() {
   const { data, setData } = useData();
   const { loader, setLoader } = useLoader();
+  
   const { playlistState } = usePlaylist();
   const { bg, modal } = playlistState;
 

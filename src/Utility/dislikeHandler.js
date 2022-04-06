@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getToken } from "./get-token";
 
-export const dislikeHandler = async (_id, likeDispatch) => {
+export const dislikeHandler = async (_id, likeDispatch,setDislikeToggle) => {
   try {
     const { data } = await axios.delete(`/api/user/likes/${_id}`, {
       headers: {
@@ -9,6 +9,8 @@ export const dislikeHandler = async (_id, likeDispatch) => {
       },
     });    
     likeDispatch({ type: "DISLIKE", payload: data.likes });
+    setDislikeToggle(true)
+    
   } catch (error) {
     console.log(error);
   }

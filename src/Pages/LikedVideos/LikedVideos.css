@@ -5,7 +5,7 @@
 .delete-btn{
     position: absolute;
     top: 5px;
-    right: 25px;
+    right: 115px;
     color: var(--black-color);
     cursor: pointer;
     background-color: var(--white-color);

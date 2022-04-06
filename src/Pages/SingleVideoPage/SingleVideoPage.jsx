@@ -40,7 +40,7 @@ export const SingleVideoPage = () => {
   }, []);
 
   const dislikeBtnHandler = () => {
-    dislikeToggle ? setDislikeToggle(false) : setDislikeToggle(!dislikeToggle);
+    setDislikeToggle(true);
   };
   return (
     <>
@@ -74,17 +74,18 @@ export const SingleVideoPage = () => {
                 thumb_up
               </span>
             )}
-
             {dislikeToggle ? (
               <span
-                onClick={() => dislikeBtnHandler()}
+                onClick={() => setDislikeToggle(false)}
                 className=" material-icons btn"
               >
                 thumb_down
               </span>
             ) : (
               <span
-                onClick={() => dislikeBtnHandler()}
+                onClick={() =>
+                  dislikeHandler(_id, likeDispatch, setDislikeToggle)
+                }
                 className=" material-icons-outlined btn"
               >
                 thumb_down

@@ -7,8 +7,8 @@ import github from '../../assets/github.png'
 
 export const Footer = () => {
   return (
-    <footer className="footer-section">
-    <p className="center-text mb-half">Develped by Deepak Goyal</p>
+    <footer className="footer-section mt-4">
+    <p className="center-text mb-half">Developed by Deepak Goyal</p>
     <ul className="social-media">
       <li className="non-bullet">
         <a

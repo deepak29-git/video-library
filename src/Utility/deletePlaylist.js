@@ -8,7 +8,6 @@ export const deletePlaylist=async(_id,setGetPlaylist)=>{
                 authorization:getToken()
             }
         })
-        console.log(response.data.playlists)
         setGetPlaylist(response.data.playlists)
     }catch(error){
         console.log(error)

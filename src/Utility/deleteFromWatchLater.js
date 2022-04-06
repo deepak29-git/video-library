@@ -9,12 +9,12 @@ export const deleteFromWatchLater = async (_id, watchLaterDispatch) => {
         authorization: getToken(),
       },
     });
-    console.log(data.watchlater);
+   
     watchLaterDispatch({
       type: "DELETE_FROM_WATCHLATER",
       payload: data.watchlater,
     });
   } catch (error) {
-    console.log(error);
+    alert(error);
   }
 };

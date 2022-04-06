@@ -11,11 +11,12 @@ import { Modal } from "../../components/Modal/Modal";
 
 import { VideoCard } from "../../components/VideoCard/VideoCard";
 import { usePlaylist } from "../../Context/platlist-context";
+
 export const SelectedCategory = () => {
   const { loader, setLoader } = useLoader();
   const [filteredCategoies, setFilteredCategories] = useState([]);
   const { categoryName } = useParams();
-  const { data, setData } = useData();
+  const { data, setData,toast } = useData();
   const { playlistState } = usePlaylist();
   const { bg, modal } = playlistState;
 
@@ -47,6 +48,7 @@ export const SelectedCategory = () => {
           })}
         </div>
       </div>
+      
     </div>
   );
 };

@@ -79,7 +79,8 @@ export const PlayList = () => {
                 <small>{videos.length}videos</small>
               </div>
             </Link>
-                <span onClick={()=>deletePlaylist(_id,setGetPlaylist)} className="material-icons btn">delete</span>
+                <span onClick={()=>{
+                  deletePlaylist(_id,setGetPlaylist)}} className="material-icons btn">delete</span>
               </div>
           </div>
         ))}

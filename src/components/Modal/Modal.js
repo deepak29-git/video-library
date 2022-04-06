@@ -1,7 +1,10 @@
+import axios from "axios";
 import { useState } from "react";
+import { useEffect } from "react";
 import { usePlaylist } from "../../Context/platlist-context";
 import { addedToPlaylist } from "../../Utility/addedToPlaylist";
 import { createNewPlaylistHandler } from "../../Utility/create-new-playlist";
+import { getToken } from "../../Utility/get-token";
 
 export const Modal = () => {
   const [playlist, setPlaylist] = useState({
@@ -10,6 +13,7 @@ export const Modal = () => {
 
   const { playlistState, playlistDispatch } = usePlaylist();
   const { createPlaylist, selectedPlaylist } = playlistState;
+
   const closeHandler = () => {
     playlistDispatch({ type: "MODAL", payload: false });
     playlistDispatch({ type: "BG", payload: "white" });
@@ -38,15 +42,23 @@ export const Modal = () => {
             <hr />
             <div className="items">
               {createPlaylist.map((list) => {
+                const isVideo = list.videos.some(
+                  (video) => video._id === selectedPlaylist._id
+                );
                 return (
                   <div key={list._id}>
                     <label htmlFor="">
                       <input
                         className="playlist-checkbox"
                         onChange={() =>
-                          addedToPlaylist(selectedPlaylist, list._id)
+                          addedToPlaylist(
+                            selectedPlaylist,
+                            list._id,
+                            playlistDispatch
+                          )
                         }
                         type="checkbox"
+                        checked={isVideo}
                       />
                       <span style={{ marginLeft: "10px", marginTop: "0.5rem" }}>
                         {list.title}
