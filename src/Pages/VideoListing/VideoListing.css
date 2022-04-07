@@ -119,3 +119,15 @@ label {
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   }
 }
+@media only screen and (max-width:813px){
+  .video-listing-main {
+    margin-top: 10rem;
+
+  }
+}
+@media only screen and (max-width:551px){
+  .video-listing-main {
+    margin-top: 14rem;
+    
+  }
+}

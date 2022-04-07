@@ -1,10 +1,10 @@
-import axios from "axios";
-import { useState } from "react";
-import { useEffect } from "react";
+
+import { useEffect, useState } from "react";
+
 import { usePlaylist } from "../../Context/platlist-context";
 import { addedToPlaylist } from "../../Utility/addedToPlaylist";
 import { createNewPlaylistHandler } from "../../Utility/create-new-playlist";
-import { getToken } from "../../Utility/get-token";
+
 
 export const Modal = () => {
   const [playlist, setPlaylist] = useState({
@@ -18,6 +18,7 @@ export const Modal = () => {
     playlistDispatch({ type: "MODAL", payload: false });
     playlistDispatch({ type: "BG", payload: "white" });
   };
+
 
   const changeHandler = (e) => {
     const { name, value } = e.target;

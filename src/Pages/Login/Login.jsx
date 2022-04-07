@@ -21,7 +21,7 @@ export const Login = () => {
   const handlerInput = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
-    setErrorMsg(false)
+    setErrorMsg(false);
   };
 
   const handleUserLogin = async () => {
@@ -43,24 +43,23 @@ export const Login = () => {
       navigate("/");
     } catch (error) {
       alert(error);
-      alert("Enter Correct Details")
+      alert("Enter Correct Details");
     }
   };
 
-  const testLogin=async()=>{
-    try{
-      const {data}=await axios.post("api/auth/login",{
-        email:"adarshbalika@gmail.com",
-        password:"adarshBalika123"
-      })
-      localStorage.setItem("token",data.encodedToken)
-      setAuth(true)
-      navigate("/")
-    }catch(error){
-      alert(error)
+  const testLogin = async () => {
+    try {
+      const { data } = await axios.post("api/auth/login", {
+        email: "adarshbalika@gmail.com",
+        password: "adarshBalika123",
+      });
+      localStorage.setItem("token", data.encodedToken);
+      setAuth(true);
+      navigate("/");
+    } catch (error) {
+      alert(error);
     }
-    
-  }
+  };
 
   const passwordHandler = () => {
     if (showPassword === "password") {
@@ -89,7 +88,9 @@ export const Login = () => {
               placeholder="Enter Email"
             />
           </div>
-          <small style={{ color: color }}>{errorMsg&& "Please Enter your email"}</small>
+          <small style={{ color: color }}>
+            {errorMsg && "Please Enter your email"}
+          </small>
           <div className="input-group">
             <label className="form-label">Password </label>
             <span
@@ -107,18 +108,11 @@ export const Login = () => {
               placeholder="Enter Password"
             />
           </div>
-          <small style={{ color: color }}>{errorMsg&&"Enter your Password"}</small>
-          <div className="checkbox-parent">
-            <div className="forgot-pass">
-              <a href="#" className="forget-content">
-                <span className="forgot-pass">Forgot your Password?</span>
-              </a>
-            </div>
-          </div>
-            <div className="center">
+          <small style={{ color: color }}>
+            {errorMsg && "Enter your Password"}
+          </small>
 
-            <button onClick={()=>testLogin()} style={{ width: "100%" }} className="btn primary-bg mt-1">Test Login</button>
-            </div>
+          
           <div className="center">
             <button
               type="submit"
@@ -127,6 +121,15 @@ export const Login = () => {
               className="mt-1 mb-1 btn primary-bg"
             >
               {loader ? "Loading...." : "Login"}
+            </button>
+          </div>
+          <div className="center">
+            <button
+              onClick={() => testLogin()}
+              style={{ width: "100%" }}
+              className="btn primary-bg mb-1"
+            >
+              Test Login
             </button>
           </div>
           <div className="center">

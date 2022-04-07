@@ -107,7 +107,7 @@ export const SingleVideoPage = () => {
               <div className="postion-center">{modal && <Modal />}</div>
               <div className="icon-container single-page-icon">
                 <span
-                  onClick={() => addToPlaylist(find, playlistDispatch)}
+                  onClick={() => auth? addToPlaylist(find, playlistDispatch):navigate("/login")}
                   className="material-icons-outlined btn align-text"
                 >
                   playlist_add

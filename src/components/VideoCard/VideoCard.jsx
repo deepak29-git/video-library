@@ -8,7 +8,6 @@ import { usePlaylist } from "../../Context/platlist-context";
 import { useWatchLater } from "../../Context/watch-leter-context";
 import { useNavigate, Link } from "react-router-dom";
 import '../VideoCard/VideoCard.css'
-import { useEffect } from "react";
 
 
 export const VideoCard = ({ video }) => {

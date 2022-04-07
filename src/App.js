@@ -12,6 +12,7 @@ import { PlaylistDetails } from "./Pages/PlaylistDetails/PlaylistDetails";
 import { SingleVideoPage } from "./Pages/SingleVideoPage/SingleVideoPage";
 import { History } from "./Pages/History/History";
 import { Signup } from "./Pages/Signup/Signup";
+import { PageNotFound } from "./Pages/PageNotFound/PageNotFound";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="/category/:categoryName" element={<SelectedCategory/>}/>
         <Route path="/videos" element={<VideoListing/>}/>
         <Route path="/signup" element={<Signup/>}/>
+        <Route path="*" element={<PageNotFound/>}/>
       </Routes>
         
     </div>
