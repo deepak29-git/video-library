@@ -7,12 +7,15 @@ import { getVideos } from "../../Data/getvideos";
 import { useData } from "../../Context/data-context";
 import { Modal } from "../../components/Modal/Modal";
 import { VideoCard } from "../../components/VideoCard/VideoCard";
+import { getSearch } from "../../Utility/search";
 function VideoListing() {
   const { data, setData } = useData();
   const { loader, setLoader } = useLoader();
-
+  const {search}=useData()
   const { playlistState } = usePlaylist();
   const { bg, modal } = playlistState;
+
+  const searchBar=getSearch(search,data)
 
   useEffect(() => {
     getVideos(setLoader, setData);
@@ -29,7 +32,7 @@ function VideoListing() {
           <div className="center-xy">
             <img src="https://www.uttf.com.ua/assets/images/loader2.gif" alt="loader" />
             </div>}
-          {data.map((video) => (
+          {searchBar.map((video) => (
             <VideoCard key={video._id} video={video} />
             ))}
         </div>

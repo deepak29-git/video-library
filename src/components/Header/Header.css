@@ -1,29 +1,38 @@
-@import url('../../variable/variable.css');
+@import url("../../variable/variable.css");
 .primary-color {
-    color: var(--primary-color);
-  }
+  color: var(--primary-color);
+}
 
-  .login-btn {
-    color: var(--black-color);
-  }
-  .login-btn:hover {
-    background-color: var(--secondary-color);
-  }
-  .primary-bg {
-    background-color: var(--primary-color);
-  }
-  
-  .logo-container {
-    display: flex;
-    align-items: center;
-  }
-  .logo-img {
-    height: 50px;
-    width: 50px;
-  }
-  
-  .hamburger{
-    cursor: pointer;
-    margin-left: 1rem;
-    margin-top: 0.9rem;
-  }
+.login-btn {
+  color: var(--black-color);
+}
+.login-btn:hover {
+  background-color: var(--secondary-color);
+}
+.primary-bg {
+  background-color: var(--primary-color);
+}
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input-group {
+  align-self: flex-end;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.logo-img {
+  height: 50px;
+  width: 50px;
+}
+
+.hamburger {
+  cursor: pointer;
+  margin-left: 1rem;
+  margin-top: 0.9rem;
+}

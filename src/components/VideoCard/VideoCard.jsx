@@ -8,6 +8,7 @@ import { usePlaylist } from "../../Context/platlist-context";
 import { useWatchLater } from "../../Context/watch-leter-context";
 import { useNavigate, Link } from "react-router-dom";
 import '../VideoCard/VideoCard.css'
+import { useEffect } from "react";
 
 
 export const VideoCard = ({ video }) => {
@@ -19,6 +20,8 @@ export const VideoCard = ({ video }) => {
   const { watchLaterState, watchLaterDispatch } = useWatchLater();
   const { watchedVideo } = watchLaterState;
   const { _id, image, title } = video;
+
+
   return (
     <div key={_id} className="video-card">
       <Link
@@ -26,6 +29,7 @@ export const VideoCard = ({ video }) => {
         onClick={() => addToHistory(video, setHistory)}
       >
         <img className="thumbnail-image" src={image} alt={title} />
+        <h4 className="my-half plr-half">{title.split("").slice(0,55).join("")+"..."}</h4>
       </Link>
       <div>
         <span

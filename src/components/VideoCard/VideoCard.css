@@ -1,3 +1,7 @@
 .video-card{
     width: 300px;
 }
+
+.plr-half{
+    padding: 0 0.5rem;
+}

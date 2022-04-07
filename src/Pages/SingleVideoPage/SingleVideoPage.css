@@ -1,23 +1,33 @@
-.react-player iframe{
+.react-player iframe {
   height: 28rem;
-  width: 100%;
-  margin-top:5rem;
+  margin-top: 6rem;
   margin-left: 1rem;
 }
 
-.single-page-container{
+.single-page-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.video-description{
+.videos-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 4rem;
+  margin-top: 6rem;
+  gap: 2rem;
+  
+}
+
+.video-description {
   margin-left: 1rem;
-  margin-top:11.5rem;
+  margin-top: 12.5rem;
   width: 50rem;
 }
-.single-page-icon{
+.single-page-icon {
   gap: 10px;
 }
-.align-text{
+.align-text {
   height: 50px;
   display: flex;
   align-items: center;
@@ -25,31 +35,28 @@
   justify-content: center;
 }
 
-.font-size{
+.font-size {
   font-size: 1rem;
   letter-spacing: 1px;
 }
 
-
-.icon-container{
+.icon-container {
   display: flex;
   flex-wrap: wrap;
 }
-.single-page-playlist-btn{
-  background:transparent;
-  border:none;
+.single-page-playlist-btn {
+  background: transparent;
+  border: none;
   cursor: pointer;
 }
 
-@media only screen and (max-width:350px){
-  .like-dislike-container{
+@media only screen and (max-width: 350px) {
+  .like-dislike-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
   }
-  .react-player iframe{
-   
-    margin-top:8rem;
-    /* margin-left: 1.5rem; */
+  .react-player iframe {
+    margin-top: 8rem;
   }
 }

@@ -7,8 +7,9 @@ import { useData } from "../../Context/data-context";
 export const Header = () => {
   const navigate = useNavigate();
   const { auth, setAuth } = useAuth();
- const {sidebar,setSidebar}=useData()
-  
+  const { sidebar, setSidebar } = useData();
+  const {setSearch } = useData();
+
   const logoutHandler = () => {
     const removeToken = localStorage.removeItem("token");
     setAuth(removeToken);
@@ -16,23 +17,21 @@ export const Header = () => {
   };
 
   const menuHandler = () => {
-    if (sidebar==="0") {
+    if (sidebar === "0") {
       setSidebar("-300px");
     } else {
       setSidebar("0");
     }
   };
+
+
   return (
     <div>
-       <Sidebar />
+      <Sidebar />
       <header className="header">
         <nav className="navbar">
           <div className="logo-container">
-            <span
-              onClick={menuHandler}
-              
-              className="material-icons hamburger "
-            >
+            <span onClick={menuHandler} className="material-icons hamburger ">
               menu
             </span>
             <Link to="/">
@@ -40,8 +39,18 @@ export const Header = () => {
                 Video<span className="primary-color">peek</span>
               </h1>
             </Link>
+            
           </div>
+        
           <div className="nav-list">
+          <div className="input-group">
+            <input
+              onChange={(e) => setSearch(e.target.value)}
+              className="form-control"
+              type="search"
+              placeholder="Search"
+            />
+          </div>
             {auth ? (
               <button
                 onClick={logoutHandler}
