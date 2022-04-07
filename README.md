@@ -43,7 +43,11 @@ If I click on any one of the categories I will be redirected to the video list p
 I can see a video listing page where all the videos are listed.
 On the Video Cards, I can see a call-to-action button,
 Watch Later: I can click on the "Watch Later" primary button or icon which will add the video to the watch later list & if I again click on it removes it from the watch later list.
-
+## Single Video Page
+I can click on a particular video thumbnail that is redirecting me to a single video page where I can,
+- Save to Playlist: I can see a list of playlists which are checkboxes where I can select multiple playlists that would add the video to the playlist. If I un-check the selected playlist it will remove the video from the playlist.
+- Like Video: I can like or dislike a video that will add or remove the video from the Liked Videos List.
+- Watch Later: I can add or remove a particular video to watch later that will add or remove the video from the Watch Later list.
 ## Playlist Management
 From the navbar, I can navigate to my playlists where all my playlists are present with the names & videos.
 On the Playlist Page,
