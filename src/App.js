@@ -16,12 +16,12 @@ import { PageNotFound } from "./Pages/PageNotFound/PageNotFound";
 
 
 function App() {
+
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/watch/:_id" element={<SingleVideoPage/>}/>
-        <Route path="/mock" element={<Mockman/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/likedvideos" element={<LikedVideos/>}/>
         <Route path="/watchlater" element={<WatchLater/>}/>

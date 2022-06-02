@@ -36,11 +36,11 @@ export const SelectedCategory = () => {
   };
 
   return (
-    <div style={{ backgroundColor: bg, height: "100vh" }}>
+    <div >
       <Header />
-      <div className="grid-container">
-        <Sidebar />
         <div className="postion-center">{modal && <Modal />}</div>
+      <div className="grid-container" style={{ filter: bg }}>
+        <Sidebar />
         {loader && <h1 className="center">...Loading</h1>}
         <div className="video-listing-main ">
           {filteredCategoies.map((video) => {

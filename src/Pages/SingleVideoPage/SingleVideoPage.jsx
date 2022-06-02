@@ -27,6 +27,7 @@ export const SingleVideoPage = () => {
   const { watchedVideo } = watchLaterState;
   const { loader, setLoader } = useLoader();
   const [find, setFind] = useState([]);
+  const [rightSideVideos,setRightSideVideos]=useState([])
   const { likeState, likeDispatch } = useLike();
   const { likedVideo } = likeState;
   const { _id } = useParams();
@@ -37,9 +38,13 @@ export const SingleVideoPage = () => {
   useEffect(() => {
     const findId = data.find((item) => item._id === _id);
     setFind(findId);
-
     getVideos(setLoader, setData);
   }, []);
+
+ useEffect(()=>{
+  const showFilteredVideos=data.filter(item=>item._id!==_id)
+  setRightSideVideos([...showFilteredVideos])
+ },[])
 
   return (
     <>
@@ -146,7 +151,7 @@ export const SingleVideoPage = () => {
           </div>
         </div>
         <div className="videos-container">
-          {data.map((video) => {
+          {rightSideVideos.map((video) => {
             return <VideoCard key={video._id} video={video} />;
           })}
         </div>

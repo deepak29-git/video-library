@@ -4,12 +4,13 @@ import "../Header/Header.css";
 import "../Sidebar/Sidebar.css";
 import { Sidebar } from "../Sidebar/Sidebar";
 import { useData } from "../../Context/data-context";
+import { useRef,useEffect } from "react";
 export const Header = () => {
   const navigate = useNavigate();
   const { auth, setAuth } = useAuth();
   const { sidebar, setSidebar } = useData();
-  const {setSearch } = useData();
-
+  const { search,setSearch } = useData();
+  const intialFocus=useRef(null);
   const logoutHandler = () => {
     const removeToken = localStorage.removeItem("token");
     setAuth(removeToken);
@@ -24,6 +25,9 @@ export const Header = () => {
     }
   };
 
+  useEffect(()=>{
+    intialFocus.current.focus()
+  },[search])
 
   return (
     <div>
@@ -39,18 +43,22 @@ export const Header = () => {
                 Video<span className="primary-color">peek</span>
               </h1>
             </Link>
-            
           </div>
-        
+
           <div className="nav-list">
-          <div className="input-group">
-            <input
-              onChange={(e) => setSearch(e.target.value)}
-              className="form-control"
-              type="search"
-              placeholder="Search"
-            />
-          </div>
+            <div className="input-group">
+              <input
+                onChange={(e) => {
+                  navigate('/videos')
+                  setSearch(e.target.value)
+                }}
+                ref={intialFocus}
+                className="form-control"
+                type="search"
+                value={search}
+                placeholder="Search"
+              />
+            </div>
             {auth ? (
               <button
                 onClick={logoutHandler}

@@ -22,12 +22,12 @@ function VideoListing() {
   }, []);
 
   return (
-    <div style={{ backgroundColor: bg }}>
+    <div>
       <Header />
-      <div className="grid-container">
         <div className="postion-center">{modal && <Modal />}</div>
-     
-        <div className={!loader&&`video-listing-main`}>
+      <div className="grid-container" style={{ filter: bg }}>
+
+        <div className={!loader?`video-listing-main`:undefined}>
         {loader && 
           <div className="center-xy">
             <img src="https://www.uttf.com.ua/assets/images/loader2.gif" alt="loader" />

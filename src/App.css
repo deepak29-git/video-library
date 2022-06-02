@@ -1,0 +1,6 @@
+  .no-scroll{
+      overflow: hidden;
+  }
+  .scroll{
+      overflow: visible;
+  }

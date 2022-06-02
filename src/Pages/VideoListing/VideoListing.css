@@ -75,10 +75,9 @@ body {
   border-radius: 5px;
 }
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  position: fixed;
+  top: 30%;
+  z-index: 5;
 }
 .items {
   overflow-y: scroll;

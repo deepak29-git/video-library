@@ -5,7 +5,7 @@ const DataContext = createContext(null);
 const DataProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [sidebar,setSidebar]=useState("-300px")
-  const [search,setSearch]=useState(null)
+  const [search,setSearch]=useState("")
 
   return (
     <DataContext.Provider value={{ data, setData ,sidebar,setSidebar,search,setSearch}}>

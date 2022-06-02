@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 
 import { usePlaylist } from "../../Context/platlist-context";
 import { addedToPlaylist } from "../../Utility/addedToPlaylist";
@@ -16,7 +16,7 @@ export const Modal = () => {
 
   const closeHandler = () => {
     playlistDispatch({ type: "MODAL", payload: false });
-    playlistDispatch({ type: "BG", payload: "white" });
+    playlistDispatch({ type: "BG", payload: "blur(0)" });
   };
 
 
@@ -70,14 +70,16 @@ export const Modal = () => {
                 );
               })}
               <div className="item">
-                <label style={{ marginTop: "0.5rem" }} htmlFor="">
+                <label style={{ marginTop: "0.5rem" }}  htmlFor="">
                   Name
                   <input
                     value={playlist.title}
                     onChange={changeHandler}
-                    className="playlist-input"
+                    className="form-control "
                     type="text"
                     name="title"
+                    
+                    autoFocus
                     placeholder="Enter playlist name"
                   />
                 </label>
