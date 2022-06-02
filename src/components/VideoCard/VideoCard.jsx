@@ -8,6 +8,7 @@ import { usePlaylist } from "../../Context/platlist-context";
 import { useWatchLater } from "../../Context/watch-leter-context";
 import { useNavigate, Link } from "react-router-dom";
 import '../VideoCard/VideoCard.css'
+import { useData } from "../../Context/data-context";
 
 
 export const VideoCard = ({ video }) => {
@@ -15,7 +16,7 @@ export const VideoCard = ({ video }) => {
   const navigate = useNavigate();
   const { setHistory } = useHistory();
   const { playlistDispatch } = usePlaylist();
-
+  const {setSidebar}=useData();
   const { watchLaterState, watchLaterDispatch } = useWatchLater();
   const { watchedVideo } = watchLaterState;
   const { _id, image, title } = video;
@@ -25,7 +26,10 @@ export const VideoCard = ({ video }) => {
     <div key={_id} className="video-card">
       <Link
         to={`/watch/${_id}`}
-        onClick={() => addToHistory(video, setHistory)}
+        onClick={() => {
+          addToHistory(video, setHistory)
+         setSidebar("-300px")
+        }}
       >
         <img className="thumbnail-image" src={image} alt={title} />
         <h4 className="my-half plr-half">{title.split("").slice(0,55).join("")+"..."}</h4>

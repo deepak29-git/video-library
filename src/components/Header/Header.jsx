@@ -4,12 +4,13 @@ import "../Header/Header.css";
 import "../Sidebar/Sidebar.css";
 import { Sidebar } from "../Sidebar/Sidebar";
 import { useData } from "../../Context/data-context";
-import { useRef,useEffect } from "react";
+import { useRef,useEffect,useState } from "react";
 export const Header = () => {
   const navigate = useNavigate();
   const { auth, setAuth } = useAuth();
   const { sidebar, setSidebar } = useData();
   const { search,setSearch } = useData();
+  const [menuIcon,setMenuIcon]=useState("menu")
   const intialFocus=useRef(null);
   const logoutHandler = () => {
     const removeToken = localStorage.removeItem("token");
@@ -20,8 +21,10 @@ export const Header = () => {
   const menuHandler = () => {
     if (sidebar === "0") {
       setSidebar("-300px");
+      setMenuIcon("menu")
     } else {
       setSidebar("0");
+      setMenuIcon("close")
     }
   };
 
@@ -35,8 +38,8 @@ export const Header = () => {
       <header className="header">
         <nav className="navbar">
           <div className="logo-container">
-            <span onClick={menuHandler} className="material-icons hamburger ">
-              menu
+          <span onClick={menuHandler} className={`material-icons hamburger`}>
+              {menuIcon}
             </span>
             <Link to="/">
               <h1 className="logo-title">
