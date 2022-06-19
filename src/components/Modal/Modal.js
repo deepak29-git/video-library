@@ -2,6 +2,7 @@
 import {  useState } from "react";
 
 import { usePlaylist } from "../../Context/platlist-context";
+import { useToast } from "../../Context/toast-context";
 import { addedToPlaylist } from "../../Utility/addedToPlaylist";
 import { createNewPlaylistHandler } from "../../Utility/create-new-playlist";
 
@@ -10,6 +11,7 @@ export const Modal = () => {
   const [playlist, setPlaylist] = useState({
     title: "",
   });
+  const {toast,setToast}=useToast()
 
   const { playlistState, playlistDispatch } = usePlaylist();
   const { createPlaylist, selectedPlaylist } = playlistState;
@@ -55,7 +57,8 @@ export const Modal = () => {
                           addedToPlaylist(
                             selectedPlaylist,
                             list._id,
-                            playlistDispatch
+                            playlistDispatch,
+                            toast,setToast
                           )
                         }
                         type="checkbox"

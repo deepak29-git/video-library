@@ -1,6 +1,5 @@
 import "../Login/Login.css";
 import { Link, useNavigate } from "react-router-dom";
-import { Header } from "../../components/Header/Header";
 import { useState } from "react";
 import { useAuth } from "../../Context/auth-context";
 import axios from "axios";
@@ -73,7 +72,6 @@ export const Login = () => {
 
   return (
     <>
-      <Header />
       <main className="login">
         <div className="login-container mt-2">
           <h3 className="center-text">Login</h3>

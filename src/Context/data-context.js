@@ -6,9 +6,10 @@ const DataProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [sidebar,setSidebar]=useState("-300px")
   const [search,setSearch]=useState("")
+  const [menuIcon, setMenuIcon] = useState("menu");
 
   return (
-    <DataContext.Provider value={{ data, setData ,sidebar,setSidebar,search,setSearch}}>
+    <DataContext.Provider value={{ data, setData ,sidebar,setSidebar,search,setSearch,menuIcon, setMenuIcon}}>
       {children}
     </DataContext.Provider>
   );

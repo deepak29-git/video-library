@@ -12,6 +12,8 @@
 .primary-bg {
   background-color: var(--primary-color);
 }
+
+
 .nav-list {
   display: flex;
   flex-wrap: wrap;

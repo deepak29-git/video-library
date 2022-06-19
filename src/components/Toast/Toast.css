@@ -1,0 +1,20 @@
+.success-outline{
+    position: fixed;
+    top: 110px;
+    right:0px;
+    z-index: 1;
+    background-color: var(--success-color);
+color: var(--white-color);
+animation: toast-in-right 0.7s;
+}
+
+
+
+@keyframes toast-in-right {
+    0% {
+        transform: translateX(-200%);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}

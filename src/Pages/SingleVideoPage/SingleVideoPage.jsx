@@ -2,7 +2,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import React from "react";
 import ReactPlayer from "react-player/youtube";
 import "../SingleVideoPage/SingleVideoPage.css";
-import { Header } from "../../components/Header/Header";
 import { useEffect } from "react";
 import { getVideos } from "../../Data/getvideos";
 import { useLoader } from "../../Custom-hook/use-loader";
@@ -19,6 +18,8 @@ import { addToWatchLater } from "../../Utility/addToWatchLater";
 import { useWatchLater } from "../../Context/watch-leter-context";
 import { useAuth } from "../../Context/auth-context";
 import { VideoCard } from "../../components/VideoCard/VideoCard";
+import { useToast } from "../../Context/toast-context";
+import { Toast } from "../../components/Toast/Toast";
 export const SingleVideoPage = () => {
   const { data, setData } = useData();
   const [dislikeToggle, setDislikeToggle] = useState(false);
@@ -34,6 +35,7 @@ export const SingleVideoPage = () => {
   const { bg, modal } = playlistState;
   const { auth } = useAuth();
   const navigate = useNavigate();
+  const {toast,setToast}=useToast();
 
   useEffect(() => {
     const findId = data.find((item) => item._id === _id);
@@ -48,7 +50,6 @@ export const SingleVideoPage = () => {
 
   return (
     <>
-      <Header />
       {loader && (
         <div className="center-xy">
           <img
@@ -112,7 +113,7 @@ export const SingleVideoPage = () => {
               <div className="postion-center">{modal && <Modal />}</div>
               <div className="icon-container single-page-icon">
                 <span
-                  onClick={() => auth? addToPlaylist(find, playlistDispatch):navigate("/login")}
+                  onClick={() => auth? addToPlaylist(find, playlistDispatch,toast,setToast):navigate("/login")}
                   className="material-icons-outlined btn align-text"
                 >
                   playlist_add
@@ -123,7 +124,7 @@ export const SingleVideoPage = () => {
                   <button
                     className="single-page-playlist-btn"
                     onClick={() =>
-                      deleteFromWatchLater(find._id, watchLaterDispatch)
+                      deleteFromWatchLater(find._id, watchLaterDispatch,toast,setToast)
                     }
                   >
                     <span className="material-icons align-text">
@@ -135,7 +136,7 @@ export const SingleVideoPage = () => {
                   <button
                     onClick={() =>
                       auth
-                        ? addToWatchLater(find, watchLaterDispatch)
+                        ? addToWatchLater(find, watchLaterDispatch,toast,setToast)
                         : navigate("/login")
                     }
                     className="single-page-playlist-btn"
@@ -156,6 +157,9 @@ export const SingleVideoPage = () => {
           })}
         </div>
       </div>
+      {toast.addToPlaylist&&<Toast text="Added to playlist"/>}
+      {toast.addToWatchLater&&<Toast text="Added to watchlater"/>}
+      {toast.removeFromWatchLater&&<Toast text="Removed from watchlater"/>}
     </>
   );
 };

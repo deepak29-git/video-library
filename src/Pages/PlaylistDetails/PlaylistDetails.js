@@ -1,8 +1,7 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import {  useEffect } from "react";
 import "../PlaylistDetails/PlaylistDetails.css";
 import { deleteVideo } from "../../Utility/deleteVideo";
-import { Header } from "../../components/Header/Header";
 import { VideoCard } from "../../components/VideoCard/VideoCard";
 import { usePlaylist } from "../../Context/platlist-context";
 import { useNavigate } from "react-router-dom";
@@ -22,7 +21,6 @@ export const PlaylistDetails = () => {
   return (
     <>
       <div style={{ backgroundColor: bg, height: "100vh" }}>
-        <Header />
         <div className="page-heading">
           <h2>Playlist Videos({playlistVideo.length})</h2>
         </div>

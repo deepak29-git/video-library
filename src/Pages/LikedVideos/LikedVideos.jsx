@@ -1,5 +1,4 @@
 import { useLike } from "../../Context/like-context";
-import { Header } from "../../components/Header/Header";
 import { VideoCard } from "../../components/VideoCard/VideoCard";
 import { usePlaylist } from "../../Context/platlist-context";
 import { useNavigate } from "react-router-dom";
@@ -17,7 +16,6 @@ export const LikedVideos = () => {
   return (
     <>
       <div style={{ backgroundColor: bg, height: "100vh" }}>
-        <Header />
         {auth&&<div className="page-heading">
           <h2>Liked Videos({likedVideo.length})</h2>
         </div>}

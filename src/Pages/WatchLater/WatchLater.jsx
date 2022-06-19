@@ -1,5 +1,4 @@
 import { useNavigate, Link } from "react-router-dom";
-import { Header } from "../../components/Header/Header";
 import { useWatchLater } from "../../Context/watch-leter-context";
 import "../../components/Sidebar/Sidebar.css";
 import "../WatchLater/WatchLater.css";
@@ -19,7 +18,6 @@ export const WatchLater = () => {
   return (
     <>
       <div style={{ backgroundColor: bg, height: "100vh" }}>
-        <Header />
         {auth && (
           <div className="page-heading">
             <h2>Watch Later({watchedVideo.length})</h2>

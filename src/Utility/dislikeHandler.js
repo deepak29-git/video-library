@@ -10,7 +10,6 @@ export const dislikeHandler = async (_id, likeDispatch,setDislikeToggle) => {
     });    
     likeDispatch({ type: "DISLIKE", payload: data.likes });
     setDislikeToggle(true)
-    
   } catch (error) {
     console.log(error);
   }

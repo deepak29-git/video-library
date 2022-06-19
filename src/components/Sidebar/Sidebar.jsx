@@ -2,7 +2,7 @@ import "../Sidebar/Sidebar.css";
 import {NavLink, Link } from "react-router-dom";
 import { useData } from "../../Context/data-context";
 export const Sidebar = () => {
-  const { sidebar,setSidebar } = useData();
+  const { sidebar,setSidebar,setMenuIcon } = useData();
 
 
   const activeStyle=(({isActive})=>{
@@ -19,24 +19,42 @@ export const Sidebar = () => {
       >
         <ul className="sidebar-lists">
           <div>
-          <NavLink onClick={()=>setSidebar("-300px")} className={activeStyle}  to="/">
+        <NavLink onClick={()=>{
+          setSidebar("-300px")
+          setMenuIcon("menu")
+          }} className={activeStyle}  to="/">
             <li className="sidebar-link">Home</li>
           </NavLink>
           </div>
-          <NavLink onClick={()=>setSidebar("-300px")} className={activeStyle} to="/videos">
+          <NavLink onClick={()=>{
+          setSidebar("-300px")
+          setMenuIcon("menu")
+          }} className={activeStyle} to="/videos">
             <li className="sidebar-link">All Videos</li>
           </NavLink >
 
-          <NavLink onClick={()=>setSidebar("-300px")} className={activeStyle} to="/watchlater">
+          <NavLink onClick={()=>{
+          setSidebar("-300px")
+          setMenuIcon("menu")
+          }} className={activeStyle} to="/watchlater">
             <li className="sidebar-link">Watch Later</li>
           </NavLink >
-          <NavLink onClick={()=>setSidebar("-300px")} className={activeStyle} to="/likedvideos">
+          <NavLink onClick={()=>{
+          setSidebar("-300px")
+          setMenuIcon("menu")
+          }} className={activeStyle} to="/likedvideos">
             <li className="sidebar-link">Liked Videos</li>
           </NavLink >
-          <NavLink onClick={()=>setSidebar("-300px")} className={activeStyle} to="/playlist">
+          <NavLink onClick={()=>{
+          setSidebar("-300px")
+          setMenuIcon("menu")
+          }} className={activeStyle} to="/playlist">
             <li className="sidebar-link">PlayList</li>
           </NavLink >
-          <NavLink onClick={()=>setSidebar("-300px")} className={activeStyle} to="/history">
+          <NavLink onClick={()=>{
+          setSidebar("-300px")
+          setMenuIcon("menu")
+          }} className={activeStyle} to="/history">
             <li className="sidebar-link">History</li>
           </NavLink >
         </ul>

@@ -9,6 +9,7 @@ import { useWatchLater } from "../../Context/watch-leter-context";
 import { useNavigate, Link } from "react-router-dom";
 import '../VideoCard/VideoCard.css'
 import { useData } from "../../Context/data-context";
+import { useToast } from "../../Context/toast-context";
 
 
 export const VideoCard = ({ video }) => {
@@ -20,7 +21,7 @@ export const VideoCard = ({ video }) => {
   const { watchLaterState, watchLaterDispatch } = useWatchLater();
   const { watchedVideo } = watchLaterState;
   const { _id, image, title } = video;
-
+  const {toast,setToast}=useToast();
 
   return (
     <div key={_id} className="video-card">
@@ -46,7 +47,7 @@ export const VideoCard = ({ video }) => {
           <div className="center">
             <button
               className="btn watch-later-btn primary-bg align-text "
-              onClick={() => deleteFromWatchLater(_id, watchLaterDispatch)}
+              onClick={() => deleteFromWatchLater(_id, watchLaterDispatch,toast,setToast)}
             >
               <span class="material-icons align-text">delete</span>
 
@@ -57,7 +58,7 @@ export const VideoCard = ({ video }) => {
           <button
             onClick={() =>
               auth
-                ? addToWatchLater(video, watchLaterDispatch)
+                ? addToWatchLater(video, watchLaterDispatch,toast,setToast)
                 : navigate("/login")
             }
             className="btn watch-later-btn primary-bg align-text"

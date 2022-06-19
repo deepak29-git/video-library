@@ -1,4 +1,3 @@
-import { Header } from "../../components/Header/Header";
 import "../VideoListing/VideoListing.css";
 import "../PlayList/PlayList.css";
 import {Link, useNavigate } from "react-router-dom";
@@ -36,7 +35,6 @@ export const PlayList = () => {
   return (
     <>
       <div style={{ backgroundColor: bg, height: "100vh" }}>
-        <Header />
         {auth&&<div className="page-heading">
           <h2>Your Playlist({getPlaylist.length})</h2>
         </div>}

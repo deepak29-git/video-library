@@ -85,14 +85,14 @@ export const videos = [
     _id: "uTV-CqDgO8o",
     title: "Rajpal Yadav Comedy scenes | chup chup ke",
     image:
-      "https://i.ytimg.com/vi/PvBq0aP_4as/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAbvfVyCNfV8vZZmAV6NdzKmYsLkQ",
+      "https://i.ytimg.com/vi/Bgei1wwzKig/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCFO7gBh7uWj_TVkkzirWiq9LRhMA",
     description: "315,487,824 views",
     creator: "DM - Desi Melodies",
     categoryName: "comedy",
   },
   {
     _id: "sM4SRc8ogWk",
-    title: "The Kapil Sharma Show Season 2",
+    title: "The Kapil Sharma Show Season 2 commedy show | kapil sharma ",
     image:
       "  https://i.ytimg.com/vi/sM4SRc8ogWk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBr15rKeKJp2IWpyajzCk5Tl2h-FQ",
     description: "315,487,824 views",
@@ -145,7 +145,7 @@ export const videos = [
     title:
       "Shayad - Love Aaj Kal | Kartik | Sara | Arushi | Pritam | Arijit Singh",
     image:
-      "	https://assets.thehansindia.com/h-upload/2020/01/23/256411-shayad-song-from-love-aaj-k.webp",
+      "	https://i.ytimg.com/vi/mF2BHtQh4EI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAmkoqovW__xX6PaEB3dffNMOan8A",
     description: "315,487,824 views",
     creator: "DM - Desi Melodies",
     categoryName: "love",
@@ -153,7 +153,7 @@ export const videos = [
   {
     _id: "3KXZduvOfDo",
     title:
-      "Shayad - Love Guru Randhawa: Ishq Tera (Official Video) | Nushrat Bharucha | Bhushan Kumar | T-SeriesAaj Kal | Kartik | Sara | Arushi | Pritam | Arijit Singh",
+      "Ishq tera - Love Guru Randhawa: Ishq Tera (Official Video) | Nushrat Bharucha | Bhushan Kumar | T-SeriesAaj Kal | Kartik | Sara | Arushi | Pritam | Arijit Singh",
     image: "	https://i.ytimg.com/vi/3KXZduvOfDo/maxresdefault.jpg",
     description: "315,487,824 views",
     creator: "DM - Desi Melodies",

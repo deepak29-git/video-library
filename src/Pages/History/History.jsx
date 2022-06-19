@@ -1,4 +1,3 @@
-import { Header } from "../../components/Header/Header";
 import "../../components/Sidebar/Sidebar.css";
 import { useHistory } from "../../Context/history-context";
 import { clearAllWatchHistory } from "../../Utility/clear-all-watch-history";
@@ -17,7 +16,6 @@ export const History = () => {
   const navigate = useNavigate();
   return (
     <>
-      <Header />
       <div style={{ backgroundColor: bg, height: "100vh" }}>
         {auth && (
           <div className="history-heading ">

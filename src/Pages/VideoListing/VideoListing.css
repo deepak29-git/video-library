@@ -7,7 +7,7 @@
 .video-listing-main {
   grid-column: 1 / 5;
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
   margin: 0 1rem;
   margin-top: 5rem;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
